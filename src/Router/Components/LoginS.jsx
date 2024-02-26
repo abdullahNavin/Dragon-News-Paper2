@@ -37,7 +37,7 @@ const LoginS = () => {
                         <h1 className="text-xl font-bold">Facebook</h1>
                     </div>
 
-                    <div className="flex gap-2 items-center border-2 border-gray-400 p-2">
+                    <div className="flex gap-2 items-center rounded-b-md border-2 border-gray-400 p-2">
                         <FaInstagram className="text-2xl text-red-700" />
                         <h1 className="text-xl font-bold">Instragram</h1>
                     </div>
