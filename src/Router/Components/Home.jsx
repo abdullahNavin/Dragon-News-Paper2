@@ -13,13 +13,13 @@ const Home = () => {
             <Braking></Braking>
             <NavBar></NavBar>
             <div className='grid grid-cols-4 gap-3'>
-                <div className='border border-green-400'>
+                <div>
                     <CategoryS></CategoryS>
                 </div>
-                <div className='border border-green-400 col-span-2'>
+                <div className='col-span-2'>
                     <NewsS></NewsS>
                 </div>
-                <div className='border border-green-400'>
+                <div >
                     <LoginS></LoginS>
                 </div>
             </div>

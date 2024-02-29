@@ -11,10 +11,10 @@ const CategoryS = () => {
     return (
         <div className='p-2'>
             <h1 className='text-2xl font-bold'>All Caterogy</h1>
-            <h1 className='bg-gray-300 text-center py-2 text-xl font-bold mt-5'>National News</h1>
+            <h1 className='bg-gray-300 text-center py-2 text-xl font-bold mt-5 rounded-sm'>National News</h1>
             <div className='ml-[66px]'>
                 {
-                    categoris.map(categori=> <Link className='block text-gray-500 font-semibold py-3'>{categori.name}</Link>)
+                    categoris.map(categori=> <Link key={categori.id} className='block text-gray-500 font-semibold py-3'>{categori.name}</Link>)
                 }
             </div>
         </div>
