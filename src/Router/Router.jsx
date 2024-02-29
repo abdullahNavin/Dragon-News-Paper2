@@ -5,6 +5,7 @@ import {
 import Root from './Components/Root';
 import Home from './Components/Home';
 import About from './About';
+import FullNews from './Components/FullNews';
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
             {
                 path:'/About',
                 element:<About></About>
+            },
+            {
+                path:'/FullNews/:id',
+                element:<FullNews></FullNews>
             }
         ]
     }

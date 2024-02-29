@@ -1,9 +1,10 @@
 import { FaBookmark } from "react-icons/fa";
 import { BsShareFill } from "react-icons/bs";
 import ReactStars from "react-rating-stars-component";
+import { Link, useNavigate } from "react-router-dom";
 
 const News = ({ news }) => {
-    const { author, title, details, thumbnail_url, image_url } = news
+    const { author, title, details, thumbnail_url, image_url, _id } = news
     return (
         <div className="mt-7 border border-gray-300 pb-4 rounded-md">
             <div className="bg-gray-200 flex justify-between p-5">
@@ -26,7 +27,11 @@ const News = ({ news }) => {
             </div>
 
             <div className="px-2 text-xl mt-5 text-gray-600">
-                <p>{details.slice(0, 280)}...<span className="text-red-800 font-bold cursor-pointer">Read more</span></p>
+                <p className="mb-4">{details.slice(0, 280)}...<Link to={`/FullNews/:${_id}`}>
+                    <span
+                        className="text-red-800 font-bold cursor-pointer">Read more</span>
+                </Link>
+                </p>
                 <hr />
                 <div className="mt-5">
                     <ReactStars
