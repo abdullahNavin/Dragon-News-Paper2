@@ -27,7 +27,7 @@ const News = ({ news }) => {
             </div>
 
             <div className="px-2 text-xl mt-5 text-gray-600">
-                <p className="mb-4">{details.slice(0, 280)}...<Link to={`/FullNews/:${_id}`}>
+                <p className="mb-4">{details.slice(0, 280)}...<Link to={`/FullNews/${_id}`}>
                     <span
                         className="text-red-800 font-bold cursor-pointer">Read more</span>
                 </Link>
