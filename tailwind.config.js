@@ -6,11 +6,11 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily:{
-        poppins:"'Poppins', sans-serif"
+      fontFamily: {
+        poppins: "'Poppins', sans-serif"
       }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 

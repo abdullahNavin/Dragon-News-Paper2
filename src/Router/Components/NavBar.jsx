@@ -1,5 +1,6 @@
 import React from 'react';
-import {NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import Modal from './Modal';
 
 const NavBar = () => {
     return (
@@ -10,7 +11,12 @@ const NavBar = () => {
                 <NavLink to={'/Career'}>Career</NavLink>
             </ul>
             <div className='flex justify-end'>
-                <button className='text-2xl font-semibold bg-[#403f3f] py-2 px-5 text-white'>Login</button>
+                <button
+                    onClick={() => document.getElementById('my_modal_2').showModal()}
+                    className='text-2xl font-semibold bg-[#403f3f] py-2 px-5 text-white rounded'>
+                    Login
+                </button>
+                <Modal></Modal>
             </div>
         </div>
     );
