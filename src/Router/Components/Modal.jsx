@@ -1,22 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Modal = () => {
+    const handleLoginForm = e => {
+        e.preventDefault()
+       const form = new FormData(e.currentTarget)
+       console.log(form.get('email'));
+        // const email = e.target.email.value;
+        // console.log(email);
+    }
     return (
         <div>
             <dialog id="my_modal_2" className="modal">
                 <div className="modal-box">
-                    <form className="card-body">
+                    <form onSubmit={handleLoginForm} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered" required />
+                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
@@ -25,6 +33,7 @@ const Modal = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
+                    <h1 className='text-center'>Don't have an account <Link className='text-green-500' to={'/SingUp'}>Sing Up</Link></h1>
                 </div>
                 <form method="dialog" className="modal-backdrop">
                     <button>close</button>
