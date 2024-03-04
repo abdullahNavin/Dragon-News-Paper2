@@ -1,10 +1,26 @@
 import React from 'react';
+import { auth } from '../../../Firebase/firebase.config';
+import { useContext } from 'react';
+import { AuthContext } from '../../ContextProvider/Provider';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const SingUp = () => {
+    // const { users, setUsers } = useContext(AuthContext)
+    // console.log(users);
+
     const handleSingUp = e => {
+
         e.preventDefault()
-        const email = e.target.email.value
-        console.log(email);
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(user => {
+                // setUsers(user)
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -20,7 +36,7 @@ const SingUp = () => {
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" placeholder="password" className="input input-bordered" required />
+                        <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>

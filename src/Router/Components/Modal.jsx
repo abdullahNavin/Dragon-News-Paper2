@@ -1,13 +1,21 @@
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { auth } from '../../../Firebase/firebase.config';
 
 const Modal = () => {
     const handleLoginForm = e => {
         e.preventDefault()
-       const form = new FormData(e.currentTarget)
-       console.log(form.get('email'));
-        // const email = e.target.email.value;
-        // console.log(email);
+        const form = new FormData(e.currentTarget)
+        const email = form.get('email')
+        const password = form.get('password')
+        signInWithEmailAndPassword(auth, email, password)
+            .then(user =>{
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     return (
         <div>
