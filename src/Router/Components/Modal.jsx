@@ -1,17 +1,28 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { auth } from '../../../Firebase/firebase.config';
+import { useContext } from 'react';
+import { AuthContext } from '../../ContextProvider/Provider';
 
 const Modal = () => {
+    const { setLoding } = useContext(AuthContext)
+
+    const location = useLocation()
+    // console.log(location);
+    const navigate = useNavigate()
+
     const handleLoginForm = e => {
         e.preventDefault()
         const form = new FormData(e.currentTarget)
         const email = form.get('email')
         const password = form.get('password')
+
         signInWithEmailAndPassword(auth, email, password)
-            .then(user =>{
+            .then(user => {
+                setLoding(true)
                 console.log(user);
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.log(error);

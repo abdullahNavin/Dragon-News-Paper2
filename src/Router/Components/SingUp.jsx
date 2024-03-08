@@ -3,12 +3,16 @@ import { auth } from '../../../Firebase/firebase.config';
 import { useContext } from 'react';
 import { AuthContext } from '../../ContextProvider/Provider';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import NavBar from './NavBar';
 
 const SingUp = () => {
     // const { users, setUsers } = useContext(AuthContext)
     // console.log(users);
+
+    // const location = useLocation()
+    // console.log(location);
+
 
     const handleSingUp = e => {
 
@@ -19,6 +23,7 @@ const SingUp = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(user => {
                 // setUsers(user)
+
             })
             .catch(error => {
                 console.log(error);

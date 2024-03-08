@@ -8,18 +8,20 @@ export const AuthContext = createContext(null)
 const Provider = ({ children }) => {
 
     const [users, setUsers] = useState(null)
+    const [loding, setLoding] = useState(true)
     // console.log(users);
 
-    useEffect(()=>{
-        const unsubscribe =onAuthStateChanged(auth,(currentUser)=>{
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUsers(currentUser)
+            setLoding(false)
         })
-        return ()=>{
+        return () => {
             unsubscribe()
         }
-    },[])
+    }, [])
 
-    const info = {users}
+    const info = { users, loding ,setLoding}
 
     return (
         <AuthContext.Provider value={info}>
