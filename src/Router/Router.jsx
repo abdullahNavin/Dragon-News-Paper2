@@ -7,6 +7,7 @@ import Home from './Components/Home';
 import About from './About';
 import FullNews from './Components/FullNews';
 import SingUp from './Components/SingUp';
+import PrivateRoute from './Components/PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/FullNews/:id',
-                element: <FullNews></FullNews>,
+                element: <PrivateRoute><FullNews></FullNews></PrivateRoute>,
                 loader: () => fetch('/news.json')
             },
             {
