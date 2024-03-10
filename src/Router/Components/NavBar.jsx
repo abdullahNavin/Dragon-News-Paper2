@@ -16,8 +16,8 @@ const NavBar = () => {
             })
     }
     return (
-        <div className='my-7 grid grid-cols-3 justify-end'>
-            <ul className='flex gap-4 justify-center items-center col-span-2 text-gray-400 font-semibold text-xl'>
+        <div className='my-7 grid grid-cols-3 justify-end sticky top-0 z-30 bg-gray-300 py-2 px-1 rounded-md'>
+            <ul className='flex gap-4 justify-center items-center col-span-2 text-gray-600 font-semibold text-xl'>
                 <NavLink className={'ml-[25.75rem]'} to={'/'}>Home</NavLink>
                 <NavLink to={'/About'}>About</NavLink>
                 <NavLink to={'/Career'}>Career</NavLink>

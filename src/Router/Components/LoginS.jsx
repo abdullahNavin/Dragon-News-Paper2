@@ -8,7 +8,7 @@ import qzone3 from '../../assets/qZone3.png'
 
 const LoginS = () => {
     return (
-        <div>
+        <div className="sticky top-2 overflow-auto h-screen">
             <div className="px-2 py-2">
                 <div>
 

@@ -9,7 +9,7 @@ const CategoryS = () => {
         .then(data => setCategoris(data))
     },[])
     return (
-        <div className='p-2'>
+        <div className='p-2 sticky top-2 h-screen'>
             <h1 className='text-2xl font-bold'>All Caterogy</h1>
             <h1 className='bg-gray-300 text-center py-2 text-xl font-bold mt-5 rounded-sm'>National News</h1>
             <div className='ml-[66px]'>
