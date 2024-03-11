@@ -4,6 +4,21 @@
     border-bottom: 3px solid #9ca3af;
 }
 
+/* -----------scrollbar customize---------- */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background: #ffffff;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(rgb(15, 198, 222),rgb(177, 177, 177));
+    border-radius: 7px;
+}
+
+/* -----------scrollbar customize---------- */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
